@@ -40,17 +40,3 @@ def distance():
     distance = (TimeElapsed * 34300) / 2
  
     return distance
-dist=0
-if __name__ == '__main__':
-    try:
-        while True:
-            dist = distance()
-            if dist < 100 and dist > 0:
-                print ("Distance to garbage = %.1f cm" % dist)
-                system("python3 request.py NULL " + str(dist) + " plznohackme69420")
-                time.sleep(1)
- 
-        # Reset by pressing CTRL + C
-    except KeyboardInterrupt:
-        print("Measurement stopped by User")
-        GPIO.cleanup()
