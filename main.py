@@ -36,7 +36,7 @@ if __name__ == '__main__':
             dist = sensor1.distance()
             if dist < rubbish_bin_height and dist > 0:
                 print("Distance to garbage = {} cm".format(dist))
-                uppdate(str(round((dist/rubbish_bin_height)*100)) + "%", round(dist))
+                uppdate(str(round((dist/rubbish_bin_height)*100)) + "% \full", round(dist))
                 sleep(1)
 
             # Lid opener sensor
@@ -52,5 +52,5 @@ if __name__ == '__main__':
     # Reset by pressing CTRL + C
     except KeyboardInterrupt:
         print("Program shut down by user")
-        uppdate("Inactive", dist)
+        uppdate("Inactive", "null")
         GPIO.cleanup()
